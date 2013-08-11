@@ -181,11 +181,13 @@
 }</style>
         <script type="text/javascript">window.socketOffline=true;</script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/headjs/0.99/head.load.min.js" >//</script>
-        <script type="text/javascript" src="https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/dojo.js">//</script>
-        <script type="text/javascript" src="https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/connection.js">//</script>
-        <script type="text/javascript" src="https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/vmath.js">//</script>
-        <script type="text/javascript" src="https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/model.js">//</script>
-        <script type="text/javascript" src="https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/main.js">//</script>
+        <script type="text/javascript">
+        	head.js("https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/dojo.js", function() {
+        		["connection.js", "vmath.js", "model.js", "main.js"].map(function(file) {
+        			 head.js("https://raw.github.com/gamedevpl/warsztat-game-demo/master/lib/"+file)
+        		})
+        	});
+        </script>
     </head>
     <body>
         <a href="http://github.com/gamedevpl/warsztat-game-demo" class="fork-me">
